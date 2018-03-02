@@ -1,2 +1,2 @@
-- service: ljiang1/helloworld
+- service: project_name
   command: bash -c "go build -v ./... && go test -v ./..."
