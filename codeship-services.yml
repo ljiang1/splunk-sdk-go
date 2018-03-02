@@ -1,4 +1,4 @@
-project_name: helloworld
+project_name: 
   build:
-    image: ljiang1/helloword
+    image: ljiang1/helloworld
     dockerfile: Dockerfile
