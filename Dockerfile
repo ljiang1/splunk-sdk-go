@@ -1,6 +1,6 @@
 FROM splunk/splunk:latest
 
- Starting from the latest Golang image
+#Starting from the latest Golang image
 FROM golang:1.9
 
 # INSTALL any further tools you need here so they are cached in the docker build
