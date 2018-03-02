@@ -11,8 +11,8 @@
 
 - name: foo_step
   tag: master
-  service: app
+  service: helloworld
   command: echo foo
 - name: bar_step
-  service: app
+  service: helloworld
   command: echo bar
