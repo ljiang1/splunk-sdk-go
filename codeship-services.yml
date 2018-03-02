@@ -1,5 +1,5 @@
 helloworld:
   build:
-    image: organisationname/helloworld
+    image: ljiang/helloworld
     dockerfile: Dockerfile
  
