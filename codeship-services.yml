@@ -1,5 +1,5 @@
-project_name:
+helloworld:
   build:
-    image: orname/hello
+    image: organisationname/helloworld
     dockerfile: Dockerfile
  
