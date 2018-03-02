@@ -1,6 +1,18 @@
 - service: helloworld
   command: bash -c "docker run -p 127.0.0.1:8089:8089 -d splunk/splunk:latest"
-  command: bash -c "echo Hello World" 
-  command: bash -c "tar -cZf /var/my-backup.tgz /home/me/" 
+ 
+#  command: bash -c "echo Hello World" 
+#  command: bash -c "tar -cZf /var/my-backup.tgz /home/me/" 
+
+- service: helloworld
+#  command: bash -c "docker run -p 127.0.0.1:8089:8089 -d splunk/splunk:latest"
   command: bash -c "go build -v ./... && go test -v ./..."
-  command: bash -c "echo after Hello World" 
+ # command: bash -c "echo after Hello World" 
+
+- name: foo_step
+  tag: master
+  service: app
+  command: echo foo
+- name: bar_step
+  service: app
+  command: echo bar
