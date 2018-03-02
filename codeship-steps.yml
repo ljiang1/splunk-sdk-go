@@ -1,5 +1,5 @@
 - service: helloworld
-  command: bash -c "docker run -p 127.0.0.1:8089:8089 -d splunk/splunk:latest"
+  command: bash -c "curl --fail -k  http://localhost:8000"
  
 #  command: bash -c "echo Hello World" 
 #  command: bash -c "tar -cZf /var/my-backup.tgz /home/me/" 
