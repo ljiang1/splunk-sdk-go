@@ -1,19 +1,5 @@
 
 - service: helloworld
-  command: docker run -p8000:8000 -p8088:8088 --rm -e "SPLUNK_START_ARGS=--accept-license" splunk/splunk
-
-- service: helloworld
-#  command: bash -c "docker run -p 127.0.0.1:8089:8089 -d splunk/splunk:latest"
-  command: bash -c "go build -v ./... && go test -v ./..."
- # command: bash -c "echo after Hello World" 
-
-- service: helloworld
-  command: bash -c "curl --fail -k  http://localhost:8000"
- 
-#  command: bash -c "echo Hello World" 
-#  command: bash -c "tar -cZf /var/my-backup.tgz /home/me/" 
-
-- service: helloworld
 #  command: bash -c "docker run -p 127.0.0.1:8089:8089 -d splunk/splunk:latest"
   command: bash -c "go build -v ./... && go test -v ./..."
  # command: bash -c "echo after Hello World" 
