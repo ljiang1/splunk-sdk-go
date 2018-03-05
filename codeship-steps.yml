@@ -1,7 +1,7 @@
 
 - service: helloworld
   command: bash -c "go build -v ./..."
-  command: bash -c "build finish" 
+  command: bash -c "echo build finish" 
 
 - service: helloworld
   command: bash -c "go test -v ./..."
