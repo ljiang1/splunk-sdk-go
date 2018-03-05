@@ -16,5 +16,5 @@ COPY . ./
 RUN go get
 
 
-#FROM splunk/splunk:latest
-#COPY --from=0 /go .
+FROM splunk/splunk:latest
+COPY --from=0 /go .
