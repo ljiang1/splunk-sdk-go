@@ -1,5 +1,5 @@
 - service: helloworld
-  command: docker run busybox echo hello
+  command: docker pull splunk/splunk:latest 
 
 - service: helloworld
   command: docker run -p8000:8000 -p8088:8088 --rm -e "SPLUNK_START_ARGS=--accept-license" splunk/splunk
