@@ -1,3 +1,10 @@
+- service: adddocker
+  command: docker run busybox echo hello
+
+  
+- service: helloworld
+  command: docker run -p8000:8000 -p8088:8088 --rm -e "SPLUNK_START_ARGS=--accept-license" splunk/splunk
+ 
 - service: helloworld
   command: bash -c "curl --fail -k  http://localhost:8000"
  
