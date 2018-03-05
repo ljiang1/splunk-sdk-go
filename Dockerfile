@@ -1,4 +1,6 @@
+FROM docker:dind
 FROM splunk/splunk:latest
+
 
 #Starting from the latest Golang image
 FROM golang:1.9

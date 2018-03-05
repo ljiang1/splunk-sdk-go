@@ -1,4 +1,4 @@
-- service: adddocker
+- service: helloworld
   command: docker run busybox echo hello
 
   

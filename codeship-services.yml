@@ -1,7 +1,4 @@
-adddocker:
-  image: docker:dind
-  add_docker: true
-  
+
 helloworld:
   build:
     image: ljiang/helloworld
