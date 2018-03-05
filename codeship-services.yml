@@ -1,7 +1,10 @@
 
 helloworld:
+  image: docker:dind
+  add_docker: true
+
   build:
-    image: docker:dind
+    image: helloworld
     dockerfile: Dockerfile
     add_docker: true
 
