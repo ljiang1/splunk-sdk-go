@@ -1,4 +1,3 @@
-FROM docker:dind
 FROM splunk/splunk:latest
 
 
