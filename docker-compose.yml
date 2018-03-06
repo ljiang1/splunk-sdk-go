@@ -1,7 +1,24 @@
 version: '3'
+
 services:
-  web:
-    build: .
+  helloworld:
+    build:
+      context: .
+      dockerfile: Dockerfile    
+    depends_on:
+      - splunkworld
+
+  splunkworld:
+    build: 
+      context: .
+      dockerfile: Dockerfile_splunk
     ports:
-    - "8089:8089"
-    - "8000:8000"
+       - "8000:8000"
+       - "8089:8089"
+    expose:
+       - "8000"
+       - "8089"
+    environment:
+       - SPLUNK_START_ARGS=--accept-license
+
+ 

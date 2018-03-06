@@ -2,14 +2,23 @@ helloworld:
   build:
     image: new/helloworld
     dockerfile: Dockerfile
-    #add_docker: true
+    add_docker: true
+    depends_on:
+      - splunkworld
+    
+splunkworld:
+  build:
+    image: new/splunkworld
+    dockerfile: Dockerfile_splunk
+    add_docker: true
     
     ports:
      - "8000:8000"
      - "8089:8089"
-
     expose:
-      - "8000"
-      - "8089"
+     - "8000"
+     - "8089"
+
     environment: 
-      - SPLUNK_START_ARGS = --accept-license
+      - SPLUNK_START_ARGS=--accept-license
+ 

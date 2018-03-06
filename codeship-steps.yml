@@ -5,6 +5,10 @@
 - service: helloworld
   command: bash -c "echo build finish" 
 
+
+#- service: splunkworld
+#  command: bash -c "ping http://splunkworld:8000"
+  
 - service: helloworld
   command: bash -c "go test -v ./..."
 

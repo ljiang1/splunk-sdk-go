@@ -1,6 +1,7 @@
 
 #Starting from the latest Golang image
 FROM golang:1.9
+#RUN bash -c "echo something"
 
 # INSTALL any further tools you need here so they are cached in the docker build
 
@@ -15,6 +16,5 @@ COPY . ./
 # Go versions after 1.5.1 include support for a vendor directory
 RUN go get
 
+#RUN go test -v
 
-#FROM splunk/splunk:latest
-#COPY --from=0 /go .
