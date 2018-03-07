@@ -11,14 +11,13 @@ services:
     depends_on:
       - splunkworld
 
-  splunkworld:
- 
+  splunkworld: 
     hostname: splunkworld
     build: 
       context: .
       dockerfile: Dockerfile_splunk
     environment:
-      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_START_ARGS: --accept-license --answer-yes
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
     volumes:
