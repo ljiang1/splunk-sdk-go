@@ -8,17 +8,22 @@ helloworld:
     
 splunkworld:
   build:
+    hostname: splunkworld
     image: new/splunkworld
     dockerfile: Dockerfile_splunk
     add_docker: true
-    
-    ports:
-     - "8000:8000"
-     - "8089:8089"
     expose:
-     - "8000"
-     - "8089"
-
-    environment: 
-      - SPLUNK_START_ARGS=--accept-license
- 
+     - 8000
+     - 8088
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunk-etc:/opt/splunk/etc
+      - opt-splunk-var:/opt/splunk/var
+    ports:
+      - "8000:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"

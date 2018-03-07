@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -22,6 +23,7 @@ func webrequest() bool {
 	//resp, err := http.Get("http://notexist:8000")
 	resp, err := http.Get("http://splunkworld:8000")
 	//resp, err := http.Get("http://google.com")
+	time.Sleep(0 * time.Minute)
 
 	fmt.Print(resp)
 	fmt.Print(err)
@@ -29,7 +31,6 @@ func webrequest() bool {
 
 	if resp.Status != "200 OK" {
 		fmt.Print(resp.Status)
-
 		return false
 	}
 
