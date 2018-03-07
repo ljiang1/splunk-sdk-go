@@ -2,28 +2,30 @@ helloworld:
   build:
     image: new/helloworld
     dockerfile: Dockerfile
-    add_docker: true
-    depends_on:
-      - splunkworld
+  
+  links:
+      #- splunkworld
+      - nginxworld
     
+nginxworld:
+  build:
+    image: new/nginxworld
+    dockerfile: Dockerfile_nginx  
+  ports:
+      - "32770:80"
+  
 splunkworld:
   build:
-    hostname: splunkworld
     image: new/splunkworld
-    dockerfile: Dockerfile_splunk
-    add_docker: true
-    expose:
-     - 8000
-     - 8088
-    environment:
+    dockerfile: Dockerfile_splunk  
+  
+  environment:
       SPLUNK_START_ARGS: --accept-license  --answer-yes
       SPLUNK_ENABLE_LISTEN: 9997
       SPLUNK_ADD: tcp 1514
-    volumes:
-      - opt-splunk-etc:/opt/splunk/etc
-      - opt-splunk-var:/opt/splunk/var
-    ports:
+  ports:
       - "8000:8000"
       - "9997:9997"
       - "8088:8088"
       - "1514:1514"
+  

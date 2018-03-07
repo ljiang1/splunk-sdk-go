@@ -16,5 +16,6 @@ COPY . ./
 # Go versions after 1.5.1 include support for a vendor directory
 RUN go get
 
-#RUN go test -v
 
+RUN bash -c "echo something"
+RUN apt-get update && apt-get install -y curl

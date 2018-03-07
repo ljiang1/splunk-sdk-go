@@ -1,14 +1,22 @@
 
+
+- service: helloworld
+  #command: bash -c "echo dfjsdfk"
+  command: bash -c "curl http://nginxworld:32770"
+
+  
 - service: helloworld
   command: bash -c "go build -v ./..."
   
 - service: helloworld
   command: bash -c "echo build finish" 
 
+- service: splunkworld
+  #command: bash -c "echo dfjsdfk"
+  command: bash -c "curl http://splunkworld:8000"
 
-#- service: splunkworld
-#  command: bash -c "ping http://splunkworld:8000"
-  
+
 - service: helloworld
   command: bash -c "go test -v ./..."
 
+ 

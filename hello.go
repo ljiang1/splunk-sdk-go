@@ -21,7 +21,7 @@ func avg(input1, input2 int) float32 {
 
 func webrequest() bool {
 	//resp, err := http.Get("http://notexist:8000")
-	resp, err := http.Get("http://splunkworld:8000")
+	resp, err := http.Get("http://nginxworld:32770")
 	//resp, err := http.Get("http://google.com")
 	time.Sleep(0 * time.Minute)
 
