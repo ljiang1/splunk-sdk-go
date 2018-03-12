@@ -20,10 +20,13 @@ func avg(input1, input2 int) float32 {
 }
 
 func webrequest() bool {
+	//workaround to wait splunk service to be ready. TODO: should in splunk service configuration
+	time.Sleep(1 * time.Minute)
 	//resp, err := http.Get("http://notexist:8000")
-	resp, err := http.Get("http://nginxworld:32770")
+	//resp, err := http.Get("http://nginxworld")
+	resp, err := http.Get("http://splunkworld:8000")
 	//resp, err := http.Get("http://google.com")
-	time.Sleep(0 * time.Minute)
+	//time.Sleep(3 * time.Minute)
 
 	fmt.Print(resp)
 	fmt.Print(err)
