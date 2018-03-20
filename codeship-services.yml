@@ -3,31 +3,14 @@ helloworld:
     image: new/helloworld
     dockerfile: Dockerfile
   
-  links:
-      - splunkworld
-      - nginxworld
+  # links:
+  #     - nginxworld
     
  
-splunkworld:
-  build:
-    image: new/splunkworld
-    dockerfile: Dockerfile_splunk  
-  
-  environment:
-      SPLUNK_START_ARGS: --accept-license  --answer-yes
-      SPLUNK_ENABLE_LISTEN: 9997
-      SPLUNK_ADD: tcp 1514
-  ports:
-      - "8000:8000"
-      - "9997:9997"
-      - "8088:8088"
-      - "1514:1514"
-
-
-nginxworld:
-  build:
-    image: new/nginxworld
-    dockerfile: Dockerfile_nginx  
-  ports:
-      - "32770:80"
- 
+# nginxworld:
+#   build:
+#     image: new/nginxworld
+#     dockerfile: Dockerfile_nginx  
+#   ports:
+#       - "32770:80"
+#  

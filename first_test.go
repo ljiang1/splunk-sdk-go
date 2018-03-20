@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func sdfTestSomething(t *testing.T) {
+func TestSomething(t *testing.T) {
 	// test stuff here...
 
 	now := time.Now()
@@ -21,14 +21,15 @@ func sdfTestSomething(t *testing.T) {
 	fmt.Printf("%d,%d,%d,%d\n", z, k, u, m)
 	if avg(z, k) < 20 {
 		print(rand.Int())
-		t.Error("????")
+		//t.Error("????")
 	} else {
-		t.Error("hahah error")
+		print(rand.Int())
+		//t.Error("hahah error")
 	}
 
 }
 
-func TestWeb(t *testing.T) {
+func dfdTestWeb(t *testing.T) {
 	// test stuff here...
 	if webrequest() {
 		print("=======okkkk")
