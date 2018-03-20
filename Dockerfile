@@ -17,5 +17,8 @@ COPY . ./
 RUN go get
 
 
+RUN go get golang.org/x/tools/cmd/cover
+RUN go get github.com/mattn/goveralls
+
 RUN bash -c "echo something"
 RUN apt-get update && apt-get install -y curl
